@@ -8,7 +8,6 @@
     margin-top: 7%;
     width: 20em;
     height: 15em;
-    background-color: beige;
 }
 
 .barra2 {
@@ -16,7 +15,6 @@
     margin-top: 7%;
     width: 20em;
     height: 15em;
-    background-color: beige;
 }
 
 .torta {
@@ -38,7 +36,6 @@
     .barra {
         margin-top: 1.2em;
         padding: 2%;
-        background-color: beige;
         width: 23em;
         height: 15em;
         /* border-style: solid;
@@ -49,7 +46,6 @@
     .barra2 {
         margin-top: 0.3em;
         padding: 1%;
-        background-color: beige;
         width: 35em;
         height: 15em;
     }
