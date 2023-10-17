@@ -14,11 +14,13 @@ const config = {
       datasets: [{
         label: 'TPRI WhatsApp',
         data: TPRIWhatsApp,
-        backgroundColor: '#8BF291'
+        backgroundColor: '#8BF291',
+        borderWidth: 1
       }, {
         label: 'TPR WhatsApp',
         data: TPRWhatsApp,
-        backgroundColor: '#B8F28B'
+        backgroundColor: '#B8F28B',
+        borderWidth: 1
       }]
     },
     options: {

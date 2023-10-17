@@ -18,10 +18,14 @@ const config = {
     labels: fechas,
     datasets: [{
       label: 'TPRI Facebook',
-      data: TPRIFacebook
+      data: TPRIFacebook,
+      backgroundColor: 'rgba(59, 128, 255)',
+      borderWidth: 1
     }, {
       label: 'TPR Facebook',
-      data: TPRFacebook
+      data: TPRFacebook,
+      backgroundColor: 'rgba(58, 188, 255)',
+      borderWidth: 1
     }]
   },
   options: {
@@ -58,3 +62,5 @@ const fbChart = new Chart(
   document.getElementById('chartFB'),
   config
 );
+
+console.log("Desde el Chart de Facebook");

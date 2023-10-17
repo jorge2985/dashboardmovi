@@ -9,10 +9,12 @@ new Chart(ctx, {
         datasets: [{
             label: 'Casos Privados',
             data: privadoFB,
+            backgroundColor:'#7269FF',
             borderWidth: 1
         }, {
             label: 'Casos Públicos',
             data: publicoFB,
+            backgroundColor:'#9E61FF',
             borderWidth: 1
         }]
     },

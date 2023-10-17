@@ -1,4 +1,4 @@
-import { meses, retenAtento, retenKA, retenPro } from '../../data.js';
+import { meses, retenAtentoF, retenKAF, retenProF } from '../../data.js';
 
 const ctx = document.getElementById('retenFijo');
 
@@ -8,19 +8,23 @@ new Chart(ctx, {
         labels: meses,
         datasets: [{
             label: 'Atento',
-            data: retenAtento
+            data: retenAtentoF
         }, {
             label: 'Konecta Argentina',
-            data: retenKA
+            data: retenKAF
         }, {
             label: 'Propios',
-            data: retenPro
+            data: retenProF
         }]
     },
     options: {
         responsive: true,
-        legend: {
-            position: 'top',
+        plugins: {
+            title: {
+                display: false,
+                position: 'right',
+                text: 'Fijo' 
+            }
         }
     }
-});
+}); 
