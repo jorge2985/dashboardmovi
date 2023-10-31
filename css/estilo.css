@@ -3,14 +3,41 @@
     text-align: center;
 }
 
-.barra {
-    margin: auto;
-    margin-top: 7%;
-    width: 20em;
-    height: 15em;
+.menu {
+    overflow: hidden;
+    background-color: #333;
 }
 
-.barra2 {
+.menu button {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    background-color: #FD7F20;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.menu button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.grafico {
+    margin: auto;
+    margin-top: 7%;
+    width: 20rem;
+    height: 15rem;
+
+}
+
+.grafico2 {
     margin: auto;
     margin-top: 7%;
     width: 20em;
@@ -30,23 +57,22 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-left: 0.5em;
     }
 
-    .barra {
+    .grafico {
         margin-top: 1.2em;
         padding: 2%;
-        width: 23em;
-        height: 15em;
+        width: 35rem;
+        height: 15rem;
         /* border-style: solid;
         border-color: rgb(173, 173, 173, 0.3);
         border-width: 0.1em; */
     }
 
-    .barra2 {
+    .grafico2 {
         margin-top: 0.3em;
         padding: 1%;
-        width: 35em;
+        width: 25rem;
         height: 15em;
     }
 
