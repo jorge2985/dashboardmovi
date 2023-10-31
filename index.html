@@ -1,42 +1,87 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Métricas</title>
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Apache</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <main>
-    <section class="cols">
-      <div class="barra">
-        <!-- Inicio: <input id="inicio" type="date"> Fin: <input id="fin" type="date">
-        <button onclick="filterDate()">Filtrar</button>
-        <button onclick="resetDate()">Resetear</button> -->
-        <canvas id="chartWA"></canvas>
-      </div>
-      <div class="barra">
-        <canvas id="chartFB"></canvas>
-      </div>
-      <div class="barra">
-        <canvas id="chartCasos"></canvas>
-      </div>
-    </section>
-    <section class="cols">
-      <!-- <div class="radar">
-        <canvas id="retenFijo"></canvas>
-      </div> -->
-      <div class="barra2">
-        <canvas id="productividad"></canvas>
-      </div>
-    </section>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-  <script type="module" src="./src/app.js"></script>
+    <div class="menu">
+        <button id="btnResumen">Resumen</button>
+        <button id="btnFacebook">Facebook</button>
+        <button id="btnWhatsapp">WhatsApp</button>
+    </div>
+    <!---- Sección General ---->
+    <main id="graficosResumen" style="display: block;">
+        <section class="cols">
+            <div class="grafico" id="facebook"></div>
+            <div class="grafico" id="whatsapp"></div>
+        </section>
+        <section class="cols">
+            <div class="grafico2" id="totalcasos"></div>
+            <div class="grafico2" id="tprc"></div>
+            <div class="grafico2" id="productividad"></div>
+        </section>
+    </main>
+    <!---- Sección WhatsApp ---->
+    <main id="graficosWhatsapp" style="display: none;">
+        <section class="cols">
+            <div class="grafico" id="whatsappTC"></div>
+            <div class="grafico" id="whatsappTPRC"></div>
+        </section>
+        <section class="cols">
+            <div class="grafico2" id="whatsappDem"></div>
+        </section>
+    </main>
+    <!---- Sección Facebook ---->
+    <main id="graficosFacebook" style="display: none;">
+        <section class="cols">
+            <div class="grafico" id="facebookTPRC"></div>
+            <div class="grafico" id="facebookTC"></div>
+        </section>
+        <section class="cols">
+            <div class="grafico2" id="fbcasos"></div>
+            <div class="grafico2" id="facebookDem"></div>
+        </section>
+    </main>
+    <!---- Apache eCharts ---->
+    
+    <script>
+
+        const btnResumen = document.getElementById('btnResumen');
+        const btnWhatsapp = document.getElementById('btnWhatsapp');
+        const btnFacebook = document.getElementById('btnFacebook');
+        const graficosResumen = document.getElementById('graficosResumen');
+        const graficosWhatsapp = document.getElementById('graficosWhatsapp');
+        const graficosFacebook = document.getElementById('graficosFacebook');
+
+        // Agrega eventos de clic a los botones
+        btnResumen.addEventListener('click', () => {
+            // Muestra la sección 1 y oculta la sección 2
+            graficosResumen.style.display = 'block';
+            graficosWhatsapp.style.display = 'none';
+            graficosFacebook.style.display = 'none';
+        });
+
+        btnWhatsapp.addEventListener('click', () => {
+            // Muestra la sección 1 y oculta la sección 2
+            graficosResumen.style.display = 'none';
+            graficosWhatsapp.style.display = 'block';
+            graficosFacebook.style.display = 'none';
+        });
+
+        btnFacebook.addEventListener('click', () => {
+            graficosResumen.style.display = 'none';
+            graficosWhatsapp.style.display = 'none';
+            graficosFacebook.style.display = 'block';
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>
